@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "Chats",
+  name: "Users",
   components: {}
 };
 </script>
