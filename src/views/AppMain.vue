@@ -10,10 +10,18 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Users from "@/components/Users/index.vue";
 
 export default {
   name: "AppMain",
+  mounted() {
+    // console.log("APPMAIN", this.$store.dispatch("userList/getUserList"));
+    this.$store.dispatch("userList/getUserList");
+  },
+  computed: {
+    ...mapState("userList", ["list"])
+  },
   components: {
     Users
   }

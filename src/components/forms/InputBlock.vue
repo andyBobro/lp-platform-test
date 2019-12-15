@@ -84,8 +84,10 @@ export default {
     border: 1px solid $color-border;
     font-size: $fs;
     line-height: 78px;
+    transition: all ease 0.3s;
     &:focus {
       outline: none;
+      border-color: $color-primary;
     }
     @include placeholder {
       line-height: 78px;
