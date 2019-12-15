@@ -1,0 +1,40 @@
+// $fs: 14px;
+
+
+h1 {
+  font-size: 3 * $fs;
+  line-height: 1.4;
+  margin-bottom: $gutter-md;
+}
+
+h2 {
+  font-size: 2.5 * $fs;
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: 2 * $fs;
+}
+
+h4 {
+  font-size: 1.5 * $fs;
+}
+
+p,
+input {
+  margin-bottom: $gutter-md;
+  font-size: $fs;
+  line-height: 1.4;
+}
+
+b {
+  font-weight: bold;
+}
+
+strong {
+  font-size: 1.2 * $fs;
+}
+
+small {
+  font-size: .8 * $fs;
+}

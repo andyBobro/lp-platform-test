@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+  background-color: $color-main-bg;
+
+  &__inner {
+    width: 1020px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.main-layout {
+  display: flex;
+  height: 100%;
+
+  &__users {
+    width: 300px;
+    // height: 100%;
+    background-color: $color-chatlist-bg;
+  }
+
+  &__chat {
+    width: 820px;
+    // height: 100%;
+  }
+}

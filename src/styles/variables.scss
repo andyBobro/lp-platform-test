@@ -1,0 +1,20 @@
+// TODO
+// native vars
+
+$color-primary: #398BFF;
+$color-main-bg: #E5E5E5;
+$color-chatlist-bg: #F3F6F8;
+$color-border: #E9EDF2;
+$color-border-darken: darken(#E9EDF2, 10%);
+$color-placeholder: #7D8790;
+$color-btn: $color-primary;
+$color-btn-hover: darken($color-btn, 10%);
+
+
+$gutter-xs: 12px;
+$gutter-md: $gutter-xs * 2;
+$gutter-lg: $gutter-xs * 4;
+
+
+$fs: 14px;
+$fs-lg: 16px;

@@ -1,0 +1,18 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 $gutter-md;
+  border: 0;
+  background-color: $color-btn;
+  box-shadow: none;
+  -webkit-appearance: none;
+  color: white;
+  transition: all ease .3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-btn-hover;
+  }
+}
