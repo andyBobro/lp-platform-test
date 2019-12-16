@@ -1,13 +1,13 @@
 <template>
   <nav class="user-list">
-    <UsersHeader :msgCount="100" :chatCount="100" />
+    <UsersHeader :msgCount="getUsersData.msgCount" :chatCount="getUsersData.list.length" />
     <ul class="user-list__list">
-      <li class="user-list__list-item" v-for="user in getUsers" :key="user.id">
+      <li class="user-list__list-item" v-for="user in getUsersData.list" :key="user.id">
         <UsersItem
           :data="{
             id: user.id,
             date: user.lastMsg.date,
-            msg: user.lastMsg.msg,
+            msg: user.lastMsg.text,
             name: user.name
         }"
         />
@@ -24,7 +24,7 @@ import UsersItem from "./UsersItem.vue";
 export default {
   name: "Users",
   computed: {
-    ...mapGetters("userList", ["getUsers"])
+    ...mapGetters("userList", ["getUsersData"])
   },
   components: {
     UsersHeader,
@@ -32,3 +32,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.user-list {
+  width: calc(100% + 15px);
+  max-height: 100vh; //calc(100vh - 60px);
+  margin-right: -15px;
+  overflow-y: auto;
+}
+</style>
