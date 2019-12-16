@@ -15,7 +15,6 @@ const routes = [
   },
   {
     path: '/app',
-    name: 'app-main',
     component: AppMain,
     children: [
       {

@@ -16,7 +16,6 @@ import Users from "@/components/Users/index.vue";
 export default {
   name: "AppMain",
   mounted() {
-    // console.log("APPMAIN", this.$store.dispatch("userList/getUserList"));
     this.$store.dispatch("userList/getUserList");
   },
   computed: {
