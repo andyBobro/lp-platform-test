@@ -4,6 +4,7 @@ export default {
     document.dispatchEvent(new Event('chatLoader:hide'))
   },
   UPDATE_CHAT(state, payload) {
-    state.history.push(payload)
+    state.selected.history.push(payload)
+    document.dispatchEvent(new Event('chatLoader:hide'))
   }
 }

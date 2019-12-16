@@ -15,7 +15,7 @@
       :size="'md'"
       :type="'password'"
     />
-    <button class="btn login-form__login">Login</button>
+    <button class="btn login-form__login" @click="login">Login</button>
   </div>
 </template>
 
@@ -23,6 +23,15 @@
 import InputBlock from "@/components/forms/InputBlock.vue";
 export default {
   name: "LoginForm",
+  methods: {
+    login() {
+      document.dispatchEvent(new Event("pageLoader:show"));
+      setTimeout(() => {
+        document.dispatchEvent(new Event("pageLoader:hide"));
+        this.$router.push("/app/main");
+      }, 1000);
+    }
+  },
   data() {
     return {};
   },
@@ -36,6 +45,7 @@ export default {
 .login-form {
   &__login {
     height: 80px;
+    margin-top: $gutter-md;
     padding: 0 $gutter-lg;
     font-size: $fs * 1.2;
     text-transform: uppercase;

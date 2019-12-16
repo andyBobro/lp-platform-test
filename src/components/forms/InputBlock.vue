@@ -1,12 +1,15 @@
 <template>
   <div class="input-block">
-    <label :for="id" class="input-block__label">{{label}}</label>
+    <label v-if="!label" :for="id" class="input-block__label">{{label}}</label>
     <input
       v-if="whatInput.type === 'text'"
       :placeholder="placeholder"
       :id="id"
       :type="type"
       :name="name"
+      :value="value"
+      @keyup.enter="inputHandler"
+      @input="inputHandler"
       :class="`input-block__text-input input-block__text-input--${size}`"
     />
     <p v-else class="error-msg">{{ whatInput.msg }}</p>
@@ -16,6 +19,11 @@
 <script>
 export default {
   name: "InputBlock",
+  methods: {
+    inputHandler(e) {
+      this.$emit("input", e.target.value);
+    }
+  },
   computed: {
     whatInput() {
       console.log(this);
@@ -71,6 +79,9 @@ export default {
 <style lang="scss">
 .input-block {
   margin-bottom: $gutter-md;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   &__label {
     display: block;
@@ -81,6 +92,8 @@ export default {
     display: block;
     width: 100%;
     height: 80px;
+    margin-bottom: 0;
+    padding: 0 $gutter-md;
     border: 1px solid $color-border;
     font-size: $fs;
     line-height: 78px;

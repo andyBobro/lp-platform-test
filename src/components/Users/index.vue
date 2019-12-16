@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .user-list {
-  width: calc(100% + 15px);
+  width: calc(100% + 10px);
   max-height: 100vh; //calc(100vh - 60px);
   margin-right: -15px;
   overflow-y: auto;

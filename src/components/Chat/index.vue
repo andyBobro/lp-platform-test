@@ -1,7 +1,7 @@
 <template>
   <div class="chat-wrapper">
-    <div class="chat-wrapper__msgs" :ref="'msgWrap'">
-      <div class="chat-wrapper__msgs-inner">
+    <div class="chat-wrapper__msgs">
+      <div class="chat-wrapper__msgs-inner" :ref="'msgWrap'">
         <ChatMessage
           v-for="item in $store.state.chat.selected.history"
           :key="item.id"
@@ -51,15 +51,18 @@ export default {
   height: 100%;
   overflow: hidden;
   &__msgs {
-    max-height: calc(100% - 100px);
-    padding: 0 $gutter-xs $gutter-lg $gutter-md;
-    overflow-y: auto;
-  }
-  &__msgs-inner {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end;
+    max-height: calc(100% - 80px);
+  }
+  &__msgs-inner {
+    width: calc(100% + 10px);
+    max-height: calc(100% - 80px);
+    margin-right: -15px;
+    padding: 0 $gutter-xs $gutter-lg $gutter-md;
+    overflow-y: auto;
   }
 }
 </style>

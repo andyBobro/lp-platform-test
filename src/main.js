@@ -21,6 +21,14 @@ document.addEventListener('chatLoader:hide', () => {
   document.querySelector('#chatLoader').style.display = 'none'
 })
 
+document.addEventListener('pageLoader:show', () => {
+  document.querySelector('#pageLoader').style.display = 'flex'
+})
+
+document.addEventListener('pageLoader:hide', () => {
+  document.querySelector('#pageLoader').style.display = 'none'
+})
+
 router.afterEach((to, from) => {
   if (to.params.userId && to.params.userId !== from.params.userId) {
     if (document.querySelector('#chatLoader')) {
