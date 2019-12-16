@@ -7,6 +7,9 @@
       >Just another messenger on web technogies. There are over 9k messengers like we and better us. Don't use us. But if you know what are you doing you can log in and enjoy...</p>
       <LoginForm />
     </div>
+    <div class="loader" id="chatLoader">
+      <div class="loader__spinner"></div>
+    </div>
   </div>
 </template>
 
@@ -23,6 +26,7 @@ export default {
 
 <style lang="scss">
 .welcome-page {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;

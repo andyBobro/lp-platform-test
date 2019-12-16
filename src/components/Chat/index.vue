@@ -28,6 +28,7 @@ import ChatInput from "./ChatInput.vue";
 export default {
   name: "Chat",
   mounted() {
+    document.dispatchEvent(new Event("chatLoader:show"));
     this.$store.dispatch("chat/getChat", {
       id: this.$route.params.userId
     });
